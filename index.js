@@ -4,73 +4,23 @@ const rpc = new RPC.Client({
 })
 
 rpc.on('ready', () => {
-  var a = 0;
-  var i = 1;
-
-  const rond = "🔴,🟠,🟡,🟢,🔵";
-  var color = rond.split(",");
-  var rondColor;
-
-  function activity1() {
     
     rpc.request('SET_ACTIVITY', {
       
       pid: process.pid,
       activity : {
-      details : "📌 Serveur Practice Eu",
-      state : "💻 IP ● eu.iripvp.fr",
+      details : "Discord bot rich presence",
+      state : "Re-dev + explication en français",
       assets : {
-      large_image : "iripvp-logo",
-      large_text : "Iri'Pvp",
-      small_image : "v2",
-      small_text : "V2",    
+      large_image : "Regarde le dossier README.md",
+      large_text : "Texte qui sera afficher quand on passe la souris dessus",
+      small_image : "Regarde le dossier README.md",
+      small_text : "Texte qui sera afficher quand on passe la souris dessus",    
       },
   
-        buttons : [{label: `${rondColor} Discord`, url: "https://www.discord.com/invite/SQhvgrW567"}]
+        buttons : [{label: "Nom du bouton", url: "Le lien qui sera ici est celui qui sera activé quand quelqu'un clique sur le bouton"}]
       },
     })
-  }
-
-  function activity2() {
-    
-    rpc.request('SET_ACTIVITY', {
-      
-      pid: process.pid,
-      activity : {
-      details : "📌 Serv Communautaire",
-      state : "✅ Recrut Staff On",
-      assets : {
-      large_image : "blabla",
-      large_text : "Bolton Communauté",
-      small_image : "discord-logo",
-      small_text : "Rejoins mon discord pour devenir un bg comme tout les autres !",    
-      },
-  
-      buttons : [{label : `${rondColor} Discord` , url : "https://www.discord.com/invite/XhxcEYn"}]
-      },
-    })
-  }
-
-  var interval = setInterval (function () {
-    if(a == 5){
-      a = 0;
-    }
-
-
-    if(i == 1){
-      rondColor = color[a];
-      activity1();
-      a++;
-      i++;
-    }else if(i == 2){
-      rondColor = color[a];
-      activity2();
-      a++;
-      i--;
-    }
-    
-
-}, 1 * 30000); 
 
 })
 
