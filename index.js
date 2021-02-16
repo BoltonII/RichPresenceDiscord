@@ -74,4 +74,4 @@ rpc.on('ready', () => {
 
 })
 
-rpc.login({ clientId : "808441086103650384" }).catch(console.error);
+rpc.login({ clientId : "Regarde le dossier README.md" }).catch(console.error);
